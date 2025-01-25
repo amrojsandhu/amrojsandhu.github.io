@@ -1,19 +1,36 @@
-name: Build and Deploy
+name: Jekyll site CI/CD
+
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v2
-      - name: Create env file
-        run: |
-          echo "SUPABASE_CLIENT_ANON_KEY=${{ secrets.SUPABASE_CLIENT_ANON_KEY }}" > .env
-
-      - name: Build site
-        run: |
-          bundle install
-          bundle exec jekyll build
-        env:
-          SUPABASE_CLIENT_ANON_KEY: ${{ secrets.SUPABASE_CLIENT_ANON_KEY }}
+    - uses: actions/checkout@v2
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'
+        bundler-cache: true
+    
+    - name: Install Dependencies
+      run: |
+        bundle install
+    
+    - name: Build Site
+      env:
+        SUPABASE_CLIENT_ANON_KEY: ${{ secrets.SUPABASE_CLIENT_ANON_KEY }}
+      run: |
+        bundle exec jekyll build
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
