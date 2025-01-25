@@ -1,5 +1,9 @@
 <div class="subscribe-form">
-  <form id="subscribeForm" action="#" method="POST">
+  <form id="subscribeForm" 
+        action="#" 
+        method="POST"
+        data-supabase-key="{{ site.env.SUPABASE_CLIENT_ANON_KEY | default: '' }}"
+        data-supabase-url="https://krioyzjtjtdkmickorfg.supabase.co">
     <div class="form-group">
       <label for="email"><strong>Subscribe to Our Newsletter</strong></label>
       <input type="email" 
@@ -25,6 +29,16 @@
 document.getElementById('subscribeForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   
+  const form = e.target;
+  const supabaseKey = form.dataset.supabaseKey;
+  const supabaseUrl = form.dataset.supabaseUrl;
+  
+  if (!supabaseKey) {
+    console.error('Missing Supabase configuration');
+    alert('Configuration error. Please try again later.');
+    return;
+  }
+
   const button = document.getElementById('submitBtn');
   const buttonText = button.querySelector('.button-text');
   const buttonLoader = button.querySelector('.button-loader');
@@ -37,10 +51,10 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
   const email = document.getElementById('email').value;
 
   try {
-    const response = await fetch('https://krioyzjtjtdkmickorfg.supabase.co/rest/v1/marketing_subscribers', {
+    const response = await fetch(`${supabaseUrl}/rest/v1/marketing_subscribers`, {
       method: 'POST',
       headers: {
-        'apikey': '{{ site.env.SUPABASE_CLIENT_ANON_KEY }}',
+        'apikey': supabaseKey,
         'Content-Type': 'application/json',
         'Prefer': 'return=minimal'
       },
@@ -56,6 +70,7 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
       throw new Error('Subscription failed');
     }
   } catch (error) {
+    console.error('Submission error:', error);
     alert('Sorry, there was an error. Please try again.');
   } finally {
     // Reset button state
