@@ -3,21 +3,24 @@ name: Build and Deploy
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production
     
     steps:
     - uses: actions/checkout@v2
     
     - name: Debug Environment
       run: |
-        echo "Checking environment setup..."
-        echo "SUPABASE_KEY exists: ${{ env.SUPABASE_CLIENT_ANON_KEY != '' }}"
-        echo "Jekyll env: $JEKYLL_ENV"
+        echo "Testing secret access..."
+        echo "Secret exists: ${{ secrets.SUPABASE_CLIENT_ANON_KEY != '' }}"
+        if [ -n "${{ secrets.SUPABASE_CLIENT_ANON_KEY }}" ]; then
+          echo "Secret is set"
+        else
+          echo "Secret is NOT set"
+        fi
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -25,17 +28,19 @@ jobs:
         ruby-version: '3.0'
         bundler-cache: true
     
-    - name: Install Dependencies
-      run: |
-        bundle install
-    
     - name: Build Site
       env:
+        JEKYLL_ENV: production
         SUPABASE_CLIENT_ANON_KEY: ${{ secrets.SUPABASE_CLIENT_ANON_KEY }}
       run: |
-        echo "Building with environment variables..."
-        env | grep SUPABASE || echo "No Supabase env found"
-        JEKYLL_ENV=production bundle exec jekyll build --verbose
+        echo "Environment check:"
+        if [ -n "$SUPABASE_CLIENT_ANON_KEY" ]; then
+          echo "SUPABASE_CLIENT_ANON_KEY is set"
+          bundle exec jekyll build --verbose
+        else
+          echo "Error: SUPABASE_CLIENT_ANON_KEY is not set"
+          exit 1
+        fi
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
