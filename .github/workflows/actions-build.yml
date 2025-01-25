@@ -1,4 +1,4 @@
-name: Jekyll site CI/CD
+name: Build and Deploy
 
 on:
   push:
@@ -12,6 +12,12 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Debug Environment
+      run: |
+        echo "Checking environment setup..."
+        echo "SUPABASE_KEY exists: ${{ env.SUPABASE_CLIENT_ANON_KEY != '' }}"
+        echo "Jekyll env: $JEKYLL_ENV"
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -27,7 +33,9 @@ jobs:
       env:
         SUPABASE_CLIENT_ANON_KEY: ${{ secrets.SUPABASE_CLIENT_ANON_KEY }}
       run: |
-        bundle exec jekyll build
+        echo "Building with environment variables..."
+        env | grep SUPABASE || echo "No Supabase env found"
+        JEKYLL_ENV=production bundle exec jekyll build --verbose
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
