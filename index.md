@@ -1,13 +1,12 @@
 ---
-title: Jekyll Serif Theme
+title: Famealy
 layout: home
-description: Jekyll Serif contains content types for a typical business website. The theme is fully responsive, blazing fast and artfully illustrated.
-intro_image: "images/illustrations/pointing.svg"
+description: Reduce friction in cooking healthy meals for your family. Get the free app to plan your meals.
+intro_image: "images/illustrations/pexels-elly-fairytale-3807364-1.JPG"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
-show_call_box: true
 ---
 
-# Serif - A Jekyll Business Theme.
+# famealy - the simplest meal planning for a family.
 
-Serif contains content types for a typical business website. The theme is fully responsive, blazing fast and artfully illustrated.
+Reduce friction in cooking healthy meals for your family. Get the free app to plan your meals.
