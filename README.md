@@ -20,6 +20,9 @@ To start the Jekyll local development server.
 
 ```
 bundle exec jekyll serve
+
+export $(cat .env | xargs) && bundle exec jekyll serve
+
 ```
 
 To build the theme.
