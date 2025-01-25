@@ -39,7 +39,7 @@ plugins:
   - jekyll-environment-variables
 
 env:
-  SUPABASE_CLIENT_ANON_KEY: <%= ENV['SUPABASE_CLIENT_ANON_KEY'] %>
+  SUPABASE_CLIENT_ANON_KEY: ${SUPABASE_CLIENT_ANON_KEY}
 
 exclude:
   - Gemfile
