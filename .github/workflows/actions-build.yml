@@ -28,6 +28,11 @@ jobs:
         ruby-version: '3.0'
         bundler-cache: true
     
+    - name: Create config override
+      run: |
+        echo "env:" > _config_env.yml
+        echo "SUPABASE_CLIENT_ANON_KEY: '${{ secrets.SUPABASE_CLIENT_ANON_KEY }}'" >> _config_env.yml
+
     - name: Build Site
       env:
         JEKYLL_ENV: production
@@ -36,7 +41,7 @@ jobs:
         echo "Environment check:"
         if [ -n "$SUPABASE_CLIENT_ANON_KEY" ]; then
           echo "SUPABASE_CLIENT_ANON_KEY is set"
-          bundle exec jekyll build --verbose
+          bundle exec jekyll build --config _config.yml,_config_env.yml --verbose
         else
           echo "Error: SUPABASE_CLIENT_ANON_KEY is not set"
           exit 1
