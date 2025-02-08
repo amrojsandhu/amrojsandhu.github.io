@@ -2,7 +2,7 @@
   <form id="subscribeForm" 
         action="#" 
         method="POST"
-        data-supabase-key="{{ site.SUPABASE_CLIENT_ANON_KEY | default: '' }}"
+        data-supabase-key="{{ site.env.SUPABASE_CLIENT_ANON_KEY | default: '' }}"
         data-supabase-url="https://krioyzjtjtdkmickorfg.supabase.co">
     <div class="form-group">
       <label for="email"><strong>Subscribe to Our Newsletter</strong></label>
