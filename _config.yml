@@ -20,17 +20,17 @@ collections:
   team:
     output: false
 
-# defaults:
-#   - scope:
-#       path: ""
-#       type: "services"
-#     values:
-#       layout: "service"
-#   - scope:
-#       path: ""
-#       type: "team"
-#     values:
-#       layout: "team"
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  # - scope:
+  #     path: ""
+  #     type: "team"
+  #   values:
+  #     layout: "team"
 
 sass:
   style: compressed # possible values: nested expanded compact compressed
