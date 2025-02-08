@@ -32,6 +32,9 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
   const form = e.target;
   const supabaseKey = form.dataset.supabaseKey;
   const supabaseUrl = form.dataset.supabaseUrl;
+
+  console.log('Supabase key:', supabaseKey);
+  console.log('Supabase URL:', supabaseUrl);
   
   if (!supabaseKey) {
     console.error('Missing Supabase configuration');
