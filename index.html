@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 
@@ -110,8 +109,8 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
   const supabaseKey = form.dataset.supabaseKey;
   const supabaseUrl = form.dataset.supabaseUrl;
 
-  console.log('Supabase key:', supabaseKey);
-  console.log('Supabase URL:', supabaseUrl);
+  console.error('Supabase key:', supabaseKey);
+  console.error('Supabase URL:', supabaseUrl);
   
   if (!supabaseKey) {
     console.error('Missing configuration');
