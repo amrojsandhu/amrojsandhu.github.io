@@ -5,7 +5,7 @@
         data-supabase-key="{{ site.env.SUPABASE_CLIENT_ANON_KEY }}"
         data-supabase-url="https://krioyzjtjtdkmickorfg.supabase.co">
     <div class="form-group">
-      <label for="email"><strong>Subscribe to Our Newsletter</strong></label>
+      <label for="email"><strong>We will keep you posted</strong></label>
       <input type="email" 
              id="email" 
              name="email" 
@@ -32,9 +32,6 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
   const form = e.target;
   const supabaseKey = form.dataset.supabaseKey;
   const supabaseUrl = form.dataset.supabaseUrl;
-
-  console.error('Supabase key:', supabaseKey);
-  console.error('Supabase URL:', supabaseUrl);
   
   if (!supabaseKey) {
     console.error('Missing configuration');
@@ -73,7 +70,7 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
       throw new Error('Subscription failed');
     }
   } catch (error) {
-    console.error('Submission error:', error);
+    console.error('Submission error');
     alert('Sorry, there was an error. Please try again.');
   } finally {
     // Reset button state
