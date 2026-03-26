@@ -2,13 +2,13 @@
 ---
 
 // Colors
-$primary: #e5261f;
-$primary-dark: #a01b16;
-$secondary: #f88379;
-$black: #2f2f41;
-$white: #ffffff;
-$white-offset: #fff6f8;
-$steel: #5c5a5a;
+$primary: #c8962a;           // golden accent
+$primary-dark: #9a7020;
+$secondary: #e0b86a;
+$black: #2c2a26;             // charcoal
+$white: #f5efe6;             // sepia background
+$white-offset: #ede6d8;      // slightly deeper sepia for borders/offsets
+$steel: #5a5248;             // warm mid-tone for secondary text
 
 // Links
 $link-color: $primary;
@@ -21,10 +21,10 @@ $font-family-base: Helvetica, Arial, sans-serif, -apple-system;
 $font-family-heading: "Playfair Display", serif, -apple-system;
 
 // Footer
-$footer-background-color: $primary;
-$footer-text-color: $white;
-$sub-footer-background-color: darken($primary, 10%);
-$sub-footer-text-color: $white;
+$footer-background-color: #2c2a26;   // charcoal footer
+$footer-text-color: #f5efe6;
+$sub-footer-background-color: #1a1814;
+$sub-footer-text-color: #e0b86a;
 
 // Bootstrap 5.3.2
 

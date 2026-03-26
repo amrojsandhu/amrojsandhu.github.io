@@ -1,6 +1,6 @@
 main:
-  - name: "Contact"
-    url: "/contact/"
+  - name: "Join Beta"
+    url: "/#subscribeForm"
     weight: 5
 
 footer:
