@@ -21,10 +21,10 @@ $font-family-base: Helvetica, Arial, sans-serif, -apple-system;
 $font-family-heading: "Playfair Display", serif, -apple-system;
 
 // Footer
-$footer-background-color: #2c2a26;   // charcoal footer
-$footer-text-color: #f5efe6;
-$sub-footer-background-color: #1a1814;
-$sub-footer-text-color: #e0b86a;
+$footer-background-color: $white-offset;
+$footer-text-color: $steel;
+$sub-footer-background-color: $white-offset;
+$sub-footer-text-color: $steel;
 
 // Bootstrap 5.3.2
 

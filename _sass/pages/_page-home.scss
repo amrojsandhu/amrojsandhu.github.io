@@ -6,3 +6,59 @@ body {
   background-color: $white;
   color: $black;
 }
+
+.faq-section {
+  padding: 60px 0 40px;
+
+  .faq-heading {
+    font-family: $font-family-heading;
+    color: $black;
+    margin-bottom: 30px;
+  }
+
+  .faq-list {
+    border-top: 1px solid $white-offset;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid $white-offset;
+
+    &[open] .faq-question::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    font-family: $font-family-heading;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: $black;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "▾";
+      font-size: 1.2rem;
+      color: $steel;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+  }
+
+  .faq-answer {
+    padding: 0 0 16px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
