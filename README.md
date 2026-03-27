@@ -1,5 +1,34 @@
 # Famealy Landing Page
 
+## Design Theme
+
+### Typography
+| Role | Font | Usage |
+|------|------|-------|
+| Headings (h1–h3, section titles, footer title, FAQ section title) | **Playfair Display** (serif, 400/700) | Editorial, literary feel — suits a reading app |
+| Body, navigation, FAQ questions, buttons, UI text | **Inter** (sans-serif, 400/500/600/700) | Modern, clean, highly legible at all sizes |
+
+Both fonts are loaded via Google Fonts CDN in `_layouts/default.html`.
+
+Font variables are defined in `assets/css/style.scss`:
+```scss
+$font-family-base:    'Inter', system-ui, -apple-system, sans-serif;
+$font-family-heading: "Playfair Display", serif;
+```
+
+### Colours
+| Variable | Hex | Role |
+|----------|-----|------|
+| `$primary` | `#c8962a` | Golden accent — links, buttons, borders |
+| `$primary-dark` | `#9a7020` | Hover states |
+| `$secondary` | `#e0b86a` | Secondary accent |
+| `$black` | `#2c2a26` | Charcoal — main text |
+| `$white` | `#f5efe6` | Sepia — page background |
+| `$white-offset` | `#ede6d8` | Deeper sepia — borders, footer background |
+| `$steel` | `#5a5248` | Warm mid-tone — secondary/muted text |
+
+---
+
 ## Installation
 
 ### Installing Ruby & Jekyll

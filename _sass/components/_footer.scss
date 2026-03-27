@@ -1,17 +1,12 @@
 .footer {
   background: $footer-background-color;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   .footer-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: flex-start;
-    @include media-breakpoint-up(sm) {
-      justify-content: space-between;
-      flex-direction: row;
-      align-items: center;
-    }
   }
   .footer-title {
     color: $black;
@@ -27,13 +22,14 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-top: 16px;
     li {
       color: $footer-text-color;
       font-size: 1rem;
       a {
         color: $footer-text-color;
         text-decoration: none;
-        padding: 12px 14px 12px 0;
+        padding: 4px 0;
         display: block;
         &:hover {
           text-decoration: underline;
@@ -42,22 +38,17 @@
     }
     @include media-breakpoint-up(sm) {
       height: inherit;
-      display: flex;
+      display: block;
       list-style: none;
-      margin: 0;
+      margin-top: 16px;
       padding: 0;
-      align-items: center;
-      justify-content: flex-end;
       li {
         list-style: none;
-        margin-right: 10px;
-        &:last-of-type {
-          margin-right: 0;
-        }
+        margin-right: 0;
         a {
-          display: inline-block;
-          height: 40px;
-          padding: 10px 8px 10px 8px;
+          display: block;
+          height: auto;
+          padding: 4px 0;
         }
       }
     }

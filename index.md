@@ -1,5 +1,5 @@
 ---
-title: Readmo
+title: LastPage
 layout: home
 description: A TTS reader that keeps ADHD brains from losing the thread mid-paragraph.
 intro_image: "images/illustrations/readmo - appreader.jpg"

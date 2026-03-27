@@ -4,6 +4,9 @@ main:
     weight: 5
 
 footer:
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/amrojsandhu/"
+    weight: 1
   - name: "Contact"
     url: "/contact/"
     weight: 2
