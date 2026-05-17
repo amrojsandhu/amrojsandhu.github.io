@@ -3,10 +3,10 @@ permalink: pretty
 title: 'LastPage'
 
 logo:
-  mobile: "images/logo/famealy_logo.png"
+  mobile: "images/logo/lastpage-logo.png"
   mobile_height: "32px"
   mobile_width: "32px"
-  desktop: "images/logo/famealy_logo.png"
+  desktop: "images/logo/lastpage-logo.png"
   desktop_height: "32px"
   desktop_width: "120px"
 

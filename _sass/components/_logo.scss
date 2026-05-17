@@ -6,6 +6,7 @@
 
 .logo {
   display: none;
+  padding-top: 10px;
   @include media-breakpoint-up(sm) {
     display: block;
   }
