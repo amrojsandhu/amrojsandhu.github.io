@@ -17,8 +17,9 @@ $link-hover-color: lighten($primary, 10%);
 $link-hover-decoration: underline;
 
 // Fonts
-$font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
-$font-family-heading: "Playfair Display", serif;
+$font-family-base: 'Lora', Georgia, serif;
+$font-family-heading: 'Fraunces', Georgia, serif;
+$font-family-mono: 'DM Mono', 'Courier New', monospace;
 
 // Footer
 $footer-background-color: $white-offset;
