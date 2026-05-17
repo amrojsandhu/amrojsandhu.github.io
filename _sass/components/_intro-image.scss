@@ -26,8 +26,18 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  margin-top: 30px;
+  max-height: 55vw; // prevent portrait-orientation blowout on mobile
   border-radius: 8px;
+  padding-top: 20px;
+  margin-top: 0;
+  @include media-breakpoint-up(md) {
+    padding-top: 0;
+    margin-top: 30px;
+    max-height: none;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .intro-image-hide-mobile {
   display: none;
