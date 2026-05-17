@@ -11,4 +11,4 @@ intro_image_hide_on_mobile: true
 
 A TTS reader that keeps ADHD brains from losing the thread mid-paragraph.
 
-> "I've been using it daily for 6 months. Went from abandoning books to finishing one a week."
+> "I've been using it daily for 6 months.<br>Went from abandoning books to finishing one a week."

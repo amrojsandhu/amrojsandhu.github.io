@@ -9,15 +9,25 @@
   display: block;
   margin: 0 auto;
   width: 100%;
-  max-width: 280px;
+  max-width: 100%;
   height: auto;
+  padding-top: 40px;
   @include media-breakpoint-up(md) {
     max-width: 300px;
     margin: 0 auto;
+    padding-top: 0;
   }
   @include media-breakpoint-up(lg) {
     max-width: 320px;
   }
+}
+.intro-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+  border-radius: 8px;
 }
 .intro-image-hide-mobile {
   display: none;

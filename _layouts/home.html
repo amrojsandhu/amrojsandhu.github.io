@@ -6,12 +6,16 @@ bodyClass: "page-home"
 <div class="intro">
   <div class="container">
     <div class="row justify-content-start">
-      <div class="col-12 col-md-7 col-lg-6">
+      <div class="col-12">
         {{ content }}
         {% include subscribe-form.html %}
       </div>
-      <div class="col-12 col-md-5 col-lg-6 position-relative">
-        <video class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}" src="https://readmore-two.vercel.app/files/thelastpage-promo-v1.mp4" autoplay muted loop playsinline></video>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <video class="intro-video" autoplay muted playsinline webkit-playsinline controls preload="auto">
+          <source src="https://readmore-two.vercel.app/files/thelastpage-promo-v1.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
@@ -24,7 +28,19 @@ bodyClass: "page-home"
       <details class="faq-item">
         <summary class="faq-question">Why isn't the beta free?</summary>
         <div class="faq-answer">
-          <p>We'd love to offer LastPage for free, but the high-quality text-to-speech voices that make it so effective are powered by TTS APIs that carry real costs per character read. Even during beta, every sentence you listen to incurs an API charge on our end. Charging a small fee lets us keep the servers running, maintain voice quality, and continue building features—without cutting corners on the listening experience.</p>
+          <p>Honestly — I want to find users who genuinely need this, not collectors of free tools. A small fee filters for people serious enough to pay for a solution, which is the only validation that matters at this stage. That said, the TTS voices that make this work do carry real API costs per character, so the fee also keeps the infrastructure running. If it doesn't work for you in 7 days, full refund. No questions.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">Can I use my own ebooks?</summary>
+        <div class="faq-answer">
+          <p>Yes. You import your own EPUBs directly into LastPage. We don't provide a content library — you bring the books you already own. This keeps the app focused on the reading experience, not on selling you content.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">Is there a mobile app?</summary>
+        <div class="faq-answer">
+          <p>LastPage is a PWA — a web app that installs directly on your phone from the browser, no App Store needed. On iPhone, open the link in Safari, tap Share, then "Add to Home Screen." On Android, tap the three-dot menu and "Add to Home Screen." It sits on your home screen and works like a native app.</p>
         </div>
       </details>
     </div>
