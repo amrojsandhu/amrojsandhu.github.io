@@ -11,7 +11,7 @@ body {
   padding: 60px 0 40px;
 
   .faq-heading {
-    font-family: $font-family-base;
+    font-family: $font-family-heading;
     font-size: 26px;
     font-weight: 600;
     line-height: 1.4;
@@ -38,7 +38,7 @@ body {
     padding: 16px 0;
     font-family: $font-family-base;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: $black;
     cursor: pointer;
     list-style: none;

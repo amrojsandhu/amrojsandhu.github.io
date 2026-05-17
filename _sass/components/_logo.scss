@@ -1,14 +1,7 @@
-.logo-text {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 700;
-  font-size: 2rem;
-  color: $black;
-  text-decoration: none;
-  line-height: 1;
-  &:hover {
-    color: $primary;
-    text-decoration: none;
-  }
+.logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .logo {

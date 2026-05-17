@@ -1,54 +1,39 @@
-.form-group {
-  margin-bottom: 1.5rem;
-  width: 100%;
-  max-width: 100%;
-  
-  label {
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-  
-  .form-control {
-    width: 350px;
-    max-width: 100%;
-    padding: 0.75rem;
-    
-    &:focus {
-      outline: none;
-      border-color: $primary;
-    }
-    
-    &.invalid {
-      border-color: #dc3545;
-      
-      &:focus {
-        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-      }
-    }
-  }
+.subscribe-form {
+  margin-top: 1.5rem;
 }
 
-textarea.form-control {
-  resize: vertical;
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.button {
-  
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-  
-  .button-loader {
-    color: #fff;
-  }
+.cta-label {
+  font-family: $font-family-mono;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $black;
 }
 
-.validation-message {
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  
-  &.invalid {
-    color: #dc3545;
-  }
+.cta-button {
+  text-transform: none;
+  font-family: $font-family-mono;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.cta-note {
+  font-family: $font-family-mono;
+  font-size: 12px;
+  color: $steel;
+  line-height: 1.4;
+}
+
+.founding-note {
+  font-family: $font-family-mono;
+  font-size: 12px;
+  color: $steel;
+  margin-top: 16px;
+  line-height: 1.4;
 }
