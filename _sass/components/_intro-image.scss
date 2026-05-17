@@ -21,6 +21,14 @@
     max-width: 320px;
   }
 }
+.intro-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+  border-radius: 8px;
+}
 .intro-image-hide-mobile {
   display: none;
   @include media-breakpoint-up(md) {

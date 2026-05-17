@@ -6,12 +6,14 @@ bodyClass: "page-home"
 <div class="intro">
   <div class="container">
     <div class="row justify-content-start">
-      <div class="col-12 col-md-7 col-lg-6">
+      <div class="col-12">
         {{ content }}
         {% include subscribe-form.html %}
       </div>
-      <div class="col-12 col-md-5 col-lg-6 position-relative">
-        <video class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}" autoplay muted playsinline webkit-playsinline controls preload="auto">
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <video class="intro-video" autoplay muted playsinline webkit-playsinline controls preload="auto">
           <source src="https://readmore-two.vercel.app/files/thelastpage-promo-v1.mp4" type="video/mp4">
         </video>
       </div>
