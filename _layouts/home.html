@@ -11,7 +11,9 @@ bodyClass: "page-home"
         {% include subscribe-form.html %}
       </div>
       <div class="col-12 col-md-5 col-lg-6 position-relative">
-        <video class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}" src="https://readmore-two.vercel.app/files/thelastpage-promo-v1.mp4" autoplay muted loop playsinline></video>
+        <video class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}" autoplay muted playsinline webkit-playsinline controls preload="auto">
+          <source src="https://readmore-two.vercel.app/files/thelastpage-promo-v1.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
