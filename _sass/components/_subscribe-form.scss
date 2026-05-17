@@ -41,6 +41,20 @@
   line-height: 1.4;
 }
 
+.cta-note-short {
+  display: inline;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.cta-note-long {
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: inline;
+  }
+}
+
 .founding-note {
   font-family: $font-family-mono;
   font-size: 0.95rem;
