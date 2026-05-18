@@ -101,7 +101,7 @@
                 return params;
             }
 
-            video.addEventListener('play', function() {
+            function trackVideoStart() {
                 if (hasStarted) {
                     return;
                 }
@@ -110,6 +110,10 @@
                 trackAnalyticsEvent('video_start', videoParams({
                     video_duration: Math.round(video.duration || 0)
                 }));
+            }
+
+            video.addEventListener('play', function() {
+                trackVideoStart();
             });
 
             video.addEventListener('timeupdate', function() {
@@ -144,6 +148,10 @@
                     video_percent: 100
                 }));
             });
+
+            if (!video.paused || video.currentTime > 0) {
+                trackVideoStart();
+            }
         });
     }
 
