@@ -125,7 +125,7 @@
                 })
             }).then(function(response) {
                 if (response.status === 201) {
-                    window.location.href = 'https://readmore-two.vercel.app/login?email=' + encodeURIComponent(email);
+                    window.location.href = 'https://readmore-two.vercel.app/login';
                     return;
                 }
                 return response.json().then(function(body) {
