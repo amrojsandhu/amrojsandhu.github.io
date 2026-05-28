@@ -73,6 +73,72 @@
         });
     }
 
+    function initSubscribeForm() {
+        var form = document.querySelector('#subscribeForm form');
+        if (!form) {
+            return;
+        }
+
+        var emailInput = form.querySelector('input[name="email"]');
+        var status = form.querySelector('.subscribe-status');
+        var submitButton = form.querySelector('button[type="submit"]');
+
+        function setStatus(message, isError) {
+            if (!status) {
+                return;
+            }
+            status.textContent = message;
+            status.style.color = isError ? '#b00020' : '#1f5d3d';
+        }
+
+        function setLoading(isLoading) {
+            if (submitButton) {
+                submitButton.disabled = isLoading;
+            }
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (!emailInput) {
+                return;
+            }
+
+            var email = emailInput.value.trim();
+            if (!email || !emailInput.checkValidity()) {
+                setStatus('Please enter a valid email address.', true);
+                emailInput.focus();
+                return;
+            }
+
+            setLoading(true);
+            setStatus('Submitting…', false);
+
+            fetch('https://readmore-two.vercel.app/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    source: 'landing'
+                })
+            }).then(function(response) {
+                if (response.status === 201) {
+                    window.location.href = 'https://readmore-two.vercel.app/login?email=' + encodeURIComponent(email);
+                    return;
+                }
+                return response.json().then(function(body) {
+                    var errorMessage = body && body.error ? body.error : 'Subscription failed. Please try again.';
+                    throw new Error(errorMessage);
+                });
+            }).catch(function(error) {
+                setLoading(false);
+                setStatus(error.message || 'Subscription failed. Please try again.', true);
+            });
+        });
+    }
+
     function getVideoUrl(video) {
         var source = video.querySelector('source');
 
@@ -156,5 +222,6 @@
     }
 
     trackGumroadClicks();
+    initSubscribeForm();
     trackVideoEvents();
 })();

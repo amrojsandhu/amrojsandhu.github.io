@@ -1,12 +1,15 @@
 <div class="subscribe-form" id="subscribeForm">
-  <div class="cta-group">
-    <a href="https://amroja.gumroad.com/l/lastpage" class="button cta-button" data-analytics-event="gumroad_button_click" data-analytics-location="subscribe_form">Continue to Gumroad <svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="5,2 11,8 5,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <div class="cta-side-info">
-      <div class="founding-note">Founding Member · $9.99/mo locked forever</div>
-      <div class="cta-note">
-        <span class="cta-note-short">Gumroad secure checkout</span>
-        <span class="cta-note-long">You'll complete payment on Gumroad secure checkout</span>
-      </div>
+  <form class="subscribe-form__form" id="subscribeFormEl" novalidate>
+    <div class="subscribe-form__fields">
+      <input id="subscribeEmail" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+      <button type="submit" class="button cta-button">Subscribe <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; margin-left: 6px; vertical-align: -1.5px;">
+  <polyline points="6 4 12 10 6 16"></polyline>
+</svg></button>
     </div>
-  </div>
+    <div class="cta-side-info">
+      <div class="founding-note">Free beta for 30 days</div>
+      <div class="cta-note">You’ll be redirected to the app after signup.</div>
+      <div class="subscribe-status" aria-live="polite"></div>
+    </div>
+  </form>
 </div>
