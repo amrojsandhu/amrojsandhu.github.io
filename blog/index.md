@@ -1,14 +1,9 @@
 ---
-layout: default
+layout: blog
 title: Blog
 permalink: /blog/
 description: Latest posts
 ---
-
-<div class="container">
-  <div class="row justify-content-start">
-    <div class="col-12 col-md-8">
-      <div class="content">
 
 ## Blog
 
@@ -19,8 +14,3 @@ description: Latest posts
   </li>
 {% endfor %}
 </ul>
-
-      </div>
-    </div>
-  </div>
-</div>

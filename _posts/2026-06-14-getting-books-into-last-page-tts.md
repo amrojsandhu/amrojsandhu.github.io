@@ -1,15 +1,9 @@
 ---
-layout: default
+layout: blog
 title: "Getting Books into Last Page TTS"
 date: 2026-06-14 09:00:00 +0000
 description: How to get EPUB files and upload them to Last Page TTS
 ---
-
-<div class="container">
-	<div class="row justify-content-start">
-		<div class="col-12 col-md-8">
-			<div class="content">
-
 # Getting Books into Last Page TTS
 
 Last Page TTS works with EPUB files — the most common ebook format outside of Kindle.
@@ -57,7 +51,3 @@ If you buy books going forward, Kobo gives you the same titles with files you ac
 
 If your EPUB isn't loading, the file may be DRM-protected. DRM-protected files are locked to specific apps and cannot be opened elsewhere. The books listed above are all DRM-free and will work without issue.
 
-			</div>
-		</div>
-	</div>
-</div>
