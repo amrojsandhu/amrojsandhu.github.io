@@ -1,98 +1,15 @@
-<div class="subscribe-form">
-  <form id="subscribeForm" 
-        action="#" 
-        method="POST"
-        data-supabase-key="{{ site.env.SUPABASE_CLIENT_ANON_KEY }}"
-        data-supabase-url="https://krioyzjtjtdkmickorfg.supabase.co">
-    <div class="form-group">
-      <label for="email"><strong>Stay in the loop!</strong></label>
-      <input type="email" 
-             id="email" 
-             name="email" 
-             class="form-control" 
-             placeholder="Enter your email address"
-             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-             title="Please enter a valid email address"
-             oninvalid="this.setCustomValidity('Please enter a valid email address')"
-             oninput="this.setCustomValidity('')"
-             required>
-      <div class="validation-message" id="emailValidationMessage"></div>
+<div class="subscribe-form" id="subscribeForm">
+  <form class="subscribe-form__form" id="subscribeFormEl" novalidate>
+    <div class="subscribe-form__fields">
+      <input id="subscribeEmail" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+      <button type="submit" class="button cta-button">Subscribe <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; margin-left: 6px; vertical-align: -1.5px;">
+  <polyline points="6 4 12 10 6 16"></polyline>
+</svg></button>
     </div>
-    <button type="submit" class="button" id="submitBtn">
-      <span class="button-text">Subscribe Now</span>
-      <span class="button-loader" style="display: none;">Sending...</span>
-    </button>
+    <div class="cta-side-info">
+      <div class="founding-note">Free beta for 30 days</div>
+      <div class="cta-note">You’ll be redirected to the app after signup.</div>
+      <div class="subscribe-status" aria-live="polite"></div>
+    </div>
   </form>
 </div>
-
-<script>
-document.getElementById('subscribeForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  
-  const form = e.target;
-  const supabaseKey = form.dataset.supabaseKey;
-  const supabaseUrl = form.dataset.supabaseUrl;
-  
-  if (!supabaseKey) {
-    console.error('Missing configuration');
-    alert('Configuration error. Please try again later.');
-    return;
-  }
-
-  const button = document.getElementById('submitBtn');
-  const buttonText = button.querySelector('.button-text');
-  const buttonLoader = button.querySelector('.button-loader');
-  
-  // Show loading state
-  buttonText.style.display = 'none';
-  buttonLoader.style.display = 'inline';
-  button.disabled = true;
-
-  const email = document.getElementById('email').value;
-
-  try {
-    const response = await fetch(`${supabaseUrl}/rest/v1/marketing_subscribers`, {
-      method: 'POST',
-      headers: {
-        'apikey': supabaseKey,
-        'Content-Type': 'application/json',
-        'Prefer': 'return=minimal'
-      },
-      body: JSON.stringify({
-        email: email
-      })
-    });
-
-    if (response.ok) {
-      alert('Thank you for subscribing!');
-      this.reset();
-    } else {
-      throw new Error('Subscription failed');
-    }
-  } catch (error) {
-    console.error('Submission error');
-    alert('Sorry, there was an error. Please try again.');
-  } finally {
-    // Reset button state
-    buttonText.style.display = 'inline';
-    buttonLoader.style.display = 'none';
-    button.disabled = false;
-  }
-});
-
-document.getElementById('email').addEventListener('input', function(e) {
-  const email = e.target.value;
-  const validationMessage = document.getElementById('emailValidationMessage');
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  
-  if (email && !emailRegex.test(email)) {
-    validationMessage.textContent = 'Please enter a valid email address';
-    validationMessage.classList.add('invalid');
-    e.target.classList.add('invalid');
-  } else {
-    validationMessage.textContent = '';
-    validationMessage.classList.remove('invalid');
-    e.target.classList.remove('invalid');
-  }
-});
-</script>

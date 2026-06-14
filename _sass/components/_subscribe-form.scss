@@ -1,54 +1,63 @@
-.form-group {
-  margin-bottom: 1.5rem;
-  width: 100%;
-  max-width: 100%;
-  
-  label {
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-  
-  .form-control {
-    width: 350px;
-    max-width: 100%;
-    padding: 0.75rem;
-    
-    &:focus {
-      outline: none;
-      border-color: $primary;
-    }
-    
-    &.invalid {
-      border-color: #dc3545;
-      
-      &:focus {
-        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-      }
-    }
-  }
+.subscribe-form {
+  margin-top: 1.5rem;
 }
 
-textarea.form-control {
-  resize: vertical;
+.subscribe-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.button {
-  
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-  
-  .button-loader {
-    color: #fff;
-  }
+.subscribe-form__fields {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.validation-message {
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  
-  &.invalid {
-    color: #dc3545;
-  }
+.subscribe-form__fields input[type="email"] {
+  min-width: 220px;
+  padding: 14px 16px;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  background: $white;
+  color: $black;
+  font-family: $font-family-sans-serif;
+  font-size: 1rem;
+  flex: 1 1 260px;
+}
+
+.subscribe-form__fields button {
+  flex: 1 1 260px;
+  padding: 14px 16px;
+  height: auto;
+  line-height: 1.5;
+  font-family: 'DM Mono', monospace;
+}
+
+.cta-side-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cta-note {
+  font-family: $font-family-mono;
+  font-size: 12px;
+  color: $steel;
+  line-height: 1.4;
+}
+
+.founding-note {
+  font-family: $font-family-mono;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $black;
+  line-height: 1.4;
+}
+
+.subscribe-status {
+  font-family: $font-family-mono;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }

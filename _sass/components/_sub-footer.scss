@@ -1,7 +1,7 @@
 .sub-footer {
   background: $sub-footer-background-color;
   color: $sub-footer-text-color;
-  padding-top: 15px;
+  padding-top: 5px;
   padding-bottom: 15px;
   @include media-breakpoint-up(md) {
     padding-top: 10px;
@@ -17,9 +17,10 @@
   }
   .copyright {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 12px;
+    opacity: 0.3;
     a {
-      font-weight: bold;
+      font-weight: normal;
       color: inherit;
     }
   }

@@ -1,31 +1,26 @@
+.logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
 .logo {
   display: none;
+  padding-top: 10px;
   @include media-breakpoint-up(sm) {
     display: block;
   }
-  img {
-    max-width: unset;
-  }
   a {
     display: block;
-    width: 100%;
-    height: 100%;
   }
 }
 .logo-mobile {
   display: block;
-  width: 40px;
-  padding: 10px 0 10px 0;
+  padding: 10px 0;
   @include media-breakpoint-up(sm) {
     display: none;
   }
-  img {
-    width: 100%;
-    height: auto;
-  }
   a {
     display: block;
-    width: 100%;
-    height: 100%;
   }
 }

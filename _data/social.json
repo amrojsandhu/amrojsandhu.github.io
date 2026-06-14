@@ -1,17 +1,7 @@
 [
   {
-    "name": "Github",
-    "link": "https://github.com/amrojsandhu",
-    "image": "images/social/github.svg"
-  },
-  {
-    "name": "Email",
-    "link": "mailto:amrojpals@gmail.com ",
-    "image": "images/social/email.svg"
-  },
-  {
-    "name": "Linkedin",
-    "link": "https://www.linkedin.com/in/amrojsandhu/",
-    "image": "images/social/linkedin.svg"
+    "name": "X",
+    "link": "https://x.com/DeadlineDiverge",
+    "image": "images/social/x.svg"
   }
 ]

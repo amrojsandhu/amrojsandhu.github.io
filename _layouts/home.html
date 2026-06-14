@@ -6,16 +6,43 @@ bodyClass: "page-home"
 <div class="intro">
   <div class="container">
     <div class="row justify-content-start">
-      <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
+      <div class="col-12">
         {{ content }}
         {% include subscribe-form.html %}
       </div>
-      {% if page.intro_image %}
-      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-        <img alt="{{ page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <video class="intro-video" autoplay muted playsinline webkit-playsinline controls preload="auto" data-analytics-video-title="LastPage promo video">
+          <source src="https://readmore-two.vercel.app/files/thelastpage-promo-v1.mp4" type="video/mp4">
+        </video>
       </div>
-      {% endif %}
     </div>
   </div>
 </div>
+
+<div class="faq-section">
+  <div class="container">
+    <h2 class="faq-heading">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-question">Is the beta free?</summary>
+        <div class="faq-answer">
+          <p>Yes — the beta is free for 30 days. Enter your email to subscribe, and you'll be redirected straight to the app after signup. This gives you a full month to try LastPage before we share the next steps.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">Can I use my own ebooks?</summary>
+        <div class="faq-answer">
+          <p>Yes. You import your own EPUBs directly into LastPage. We don't provide a content library — you bring the books you already own. This keeps the app focused on the reading experience, not on selling you content.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">Is there a mobile app?</summary>
+        <div class="faq-answer">
+          <p>LastPage is a PWA — a web app that installs directly on your phone from the browser, no App Store needed. On iPhone, open the link in Safari, tap Share, then "Add to Home Screen." On Android, tap the three-dot menu and "Add to Home Screen." It sits on your home screen and works like a native app.</p>
+        </div>
+      </details>
+    </div>
+  </div>
 </div>

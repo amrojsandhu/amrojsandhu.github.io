@@ -1,12 +1,12 @@
 main:
-  - name: "Contact"
-    url: "/contact/"
+  - name: "Join Beta"
+    url: "/#subscribeForm"
     weight: 5
   - name: "Blog"
     url: "/blog/"
     weight: 10
 
 footer:
-  - name: "Contact"
-    url: "/contact/"
-    weight: 2
+  - name: "X @ DeadlineDiverge"
+    url: "https://x.com/DeadlineDiverge"
+    weight: 1

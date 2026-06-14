@@ -8,8 +8,8 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-Gemfile.lock
-**/Gemfile.lock
+vendor/
+.bundle/
 
 # Temporary files
 tmp
