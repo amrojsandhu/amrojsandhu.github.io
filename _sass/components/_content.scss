@@ -44,21 +44,23 @@
   ul,
   ol {
     margin-bottom: 20px;
+    padding-left: 1.25rem;
+    list-style-position: outside;
     ul,
     ol {
       margin-bottom: 0;
     }
   }
   ul {
-    list-style: disc;
+    list-style: disc outside;
   }
   ol {
-    list-style: decimal;
+    list-style: decimal outside;
   }
   li {
     margin-bottom: 5px;
     line-height: 1.56;
-    margin-left: 20px;
+    margin-left: 0;
     color: $steel;
   }
   hr {
